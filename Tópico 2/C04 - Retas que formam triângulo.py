@@ -5,7 +5,7 @@ a = int(input("Digite o primeiro valor inteiro positivo: "))
 b = int(input("Digite o segundo valor inteiro positivo: "))
 c = int(input("Digite o terceiro valor inteiro positivo: "))
 
-print(f"É possivel compôr um triângulo?", end=" ")
+print(f"É possível compôr um triângulo?", end=" ")
 
 if a <= 0 or b <= 0 or c <= 0:
 

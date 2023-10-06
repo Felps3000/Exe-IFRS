@@ -5,17 +5,5 @@
 # conforme determinado nos exemplos abaixo.
 # SAÍDA: 0  1  1  2  3  5  8  13  21  34
 
-termo1 = 1
-termo2 = 1
+# REFAZER!!!!!
 
-fib = 0
-
-if fib == 0:
-    print(f"{fib}", end=" ")
-else:
-    while fib <= 34:
-        fib = termo2 + termo1
-        termo1 = termo2
-        termo2 = termo1
-
-        print(f"{fib}", end=" ")
