@@ -9,7 +9,7 @@
 # Calcule o tempo de duração da partida e mostre uma mensagem com o resultado
 
 startHour = int(input("Insira a hora de início: "))
-startMin = int(input("Insira o minuto do final: "))
+startMin = int(input("Insira o minuto do início: "))
 
 endHour = int(input("Insira a hora do final: "))
 endMin = int(input("Insira o minuto do final: "))
@@ -30,4 +30,4 @@ if totalMinutos < 0:
 if (totalHora < 0) or (totalHora == 0 and totalMinutos == 0):
     totalHora += 24
 
-print(f"{totalHora} : {totalMinutos}")
+print(f"{str(totalHora).zfill(2)}:{str(totalMinutos).zfill(2)}")

@@ -52,4 +52,4 @@ elif (valor > 4000) and (valor <= 5000):
 else:
     valor -= 5000  # retira os mil inteiros
     valor = valor * 0.5 + 1000  # 50% do valor restante mais 10% do 2º mil, 20% do 3º mil, 30% do 4º mil e 40% do 5º mil
-    print(f"{valor: .2f}")
+    print(f"R${valor: .2f}")

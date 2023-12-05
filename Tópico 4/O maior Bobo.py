@@ -2,7 +2,7 @@
 # é conhecida por todos, inclusive em reinos vizinhos. Uma de suas mais famosas qualidades é seu bom humor,
 # que é nutrido diariamente por um bobo da corte, eleito anualmente no Grande Concurso de Comédia (GCC) do reino.
 # O bobo da corte ajuda a aliviar as tensões das diversas reuniões políticas que o cargo exige,
-# alegrando não só o Comendador como também a totalidade o reino.
+# alegrando não só o Comendador como também a totalidade do reino.
 #  O jovem Carlos é um grande comediante cujo sonho é se tornar bobo da corte na próxima temporada.
 # Ele passou os últimos meses anotando piadas e trocadilhos dos mais diversos tipos, muitos dos quais sobre sua
 # própria (diminuta) estatura. Chegou a época da eleição do bobo da corte, e um total de N candidatos se inscreveram.
@@ -27,24 +27,22 @@
 # Seu programa deve produzir uma única linha contendo o caractere ‘S’ caso o jovem Carlos seja eleito bobo da corte,
 # ou o caractere ‘N’ caso contrário.
 
-p = int(input("Insira o número de participantes: "))
-r = int(input(f"Insira o número de votos do 1\N{DEGREE SIGN} participante: "))  # reserva do número de votos do Carlos
+p = int(input("Insira o número de participantes: "))  # número de participantes
+r = int(input("Insira o número de votos do 1º participante: "))  # reserva do número de votos do Carlos
 c = 1  # contador do loop
 v = 0  # número de votos
-order = 2  # ordinal do número de participantes
 m = 0  # maior número de votos inserido
 
-while c < p:  # roda o loop enquanto o contador for menor que o número de participantes
-    v = int(input(f"Insira o número de votos do {order}\N{DEGREE SIGN} participante: "))
-    if v > r:  # se o número de votos [v] for maior que o número de votos do Carlos [r]
-        m = v  # define [v] como o maior número de votos [m]
+while c < p:  # roda o loop enquanto o contador [c] for menor que o número de participantes [p]
+    v = int(input(f"Insira o número de votos do {c+1}º participante: "))
+    if v > r:  # checa o número de votos [v] é maior que o número de votos do Carlos [r]
+        m = v  # caso seja define [v] como o maior número de votos [m]
     c += 1  # incrementa o contador
-    order += 1  # incrementa o ordinal
 
 print(f"Carlos é o vencedor?", end=" ")
 
-if m > r:  # se após o loop o maior número inserido [m] for maior que o número de votos do Carlos [r]
+if m > r:  # checa se após o loop o maior número inserido [m] é maior que o número de votos do Carlos [r]
     print("Não!")
 
 else:
-    print("Sim!")
+    print("sim!")
