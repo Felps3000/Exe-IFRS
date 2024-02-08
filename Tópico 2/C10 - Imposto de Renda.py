@@ -21,7 +21,7 @@
 valor = float(input("Insira o valor da sua renda mensal: "))
 
 # isento
-if valor < 1000:
+if valor <= 1000:
     print(f"0.00")
 
 # faixa de 1000,01 a 2000, pagando 10%
