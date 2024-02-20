@@ -11,7 +11,7 @@ def menu():
         case "1":
             dados.append([input("Insira o nome do aluno: "),
                          float(input("Insira a nota do aluno: "))])
-            if 0 <= dados[-1][-1] <= 10:  # checa se o valor da nota é válido
+            if 0 <= dados[-1][1] <= 10:  # checa se o valor da nota é válido
                 print(f"Aluno incluído com sucesso!\n")
                 menu()
             else:
@@ -48,8 +48,7 @@ def menu():
                 print("Não existem alunos cadastrados!\n")
                 menu()
             else:
-                i = 0
-                soma = 0
+                i = soma = 0
                 while i < len(dados):  # roda o loop enquanto o contador (i) for menor que o números de itens na lista
                     soma += dados[i][1]  # soma o segundo valor dos itens na lista (notas)
                     i += 1
