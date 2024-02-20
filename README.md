@@ -1,2 +1,2 @@
 Exercícios de programação
-Primeiro semestre ADS - IFRS Campus Restinga
+Segundo semestre ADS - IFRS Campus Restinga
