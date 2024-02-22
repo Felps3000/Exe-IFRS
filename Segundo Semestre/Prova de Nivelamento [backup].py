@@ -1,5 +1,3 @@
-import connect
-
 dados = []
 
 
@@ -10,15 +8,17 @@ def menu():
     menuselection = input()
 
     match menuselection:
-
         case "1":
             try:  # testa se algum valor inserido retornará um erro
-                sql = "INSERT INTO alunos (nome, nota) VALUES (%s, %s)"
-                val = (input("Insira o nome do aluno: "), float(input("Insira a nota do aluno: ")))
-                connect.mycursor.execute(sql, val)
-                connect.mydb.commit()
-                print(f"Aluno incluído com sucesso!\n")
-                menu()
+                dados.append([input("Insira o nome do aluno: "),
+                              float((input("Insira a nota do aluno: ")))])
+                if 0 <= dados[-1][1] <= 10:  # checa se o valor da nota é válido
+                    print(f"Aluno incluído com sucesso!\n")
+                    menu()
+                else:
+                    print("Nota inválida, insira um valor entre 0 e 10!\n")
+                    dados.pop(-1)  # exclui a última entrada da lista, pois ela foi inválida
+                    menu()
             except ValueError:  # retorna uma mensagem de erro caso o valor inserido como nota não seja válido
                 print("Valor de nota inválido!\n")
                 menu()
@@ -45,7 +45,7 @@ def menu():
                     if matricula < len(dados):
                         novanota = float(input("Insira a nova nota: "))
                         if 0 <= novanota <= 10:  # checa se a nova nota é válida
-                            dados[matricula][1] = novanota  # altera o valor do segundo dado dentro do índice
+                            dados[matricula][1] = novanota  # altera o valor do segundo dado dentro do índice [matricula]
                             print(f"Nota alterada com sucesso!\n")
                             menu()
                         else:
