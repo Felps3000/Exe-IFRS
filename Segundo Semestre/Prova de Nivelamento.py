@@ -1,7 +1,5 @@
 import connect
 
-dados = []
-
 
 def menu():
     print("Selecione a opção:")
@@ -24,14 +22,18 @@ def menu():
                 menu()
 
         case "2":
-            if not dados:  # checa se a lista de dados não está vazia
+            connect.mycursor.execute("SELECT COUNT(*) FROM alunos")
+            results = connect.mycursor.fetchone()
+            if not results:  # checa se a lista de dados não está vazia
                 print("Não existem alunos cadastrados!\n")
                 menu()
             else:
-                for num, item in enumerate(dados):  # retorna o índice dos objetos dentro da lista
-                    print(f"Nome: {item[0]}, "  # exibe o primeiro dado dentro do seu índice 
-                          f"Nota: {item[1]:05.2f}, "  # exibe o segundo dado dentro do seu índice
-                          f"Matrícula Nº: {num}\n")  # exibe o valor do índice
+                connect.mycursor.execute("SELECT * FROM alunos")
+                results = connect.mycursor.fetchall()
+                print("Matrícula | Nome | Nota")
+                for row in results:
+                    print('{:} | {:} | {:}'.format(*row))
+                print("\n")
                 menu()
 
         case "3":
