@@ -17,7 +17,7 @@ def menu():
                 connect.mydb.commit()
                 print(f"Aluno incluído com sucesso!\n")
                 menu()
-            except ValueError:  # retorna uma mensagem de erro caso o valor inserido como nota não seja válido
+            except ValueError:  # retorna uma mensagem de erro caso o valor inserido como nota seja inválido
                 print("Valor de nota inválido!\n")
                 menu()
 
@@ -37,7 +37,9 @@ def menu():
                 menu()
 
         case "3":
-            if not dados:
+            connect.mycursor.execute("SELECT COUNT(*) FROM alunos")
+            results = connect.mycursor.fetchone()
+            if not results:  # checa se a lista de dados não está vazia
                 print("Não existem alunos cadastrados!\n")
                 menu()
             else:
@@ -61,7 +63,9 @@ def menu():
                     menu()
 
         case "4":
-            if not dados:
+            connect.mycursor.execute("SELECT COUNT(*) FROM alunos")
+            results = connect.mycursor.fetchone()
+            if not results:  # checa se a lista de dados não está vazia
                 print("Não existem alunos cadastrados!\n")
                 menu()
             else:
