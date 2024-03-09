@@ -119,7 +119,7 @@ lista3 = [Funcionario()]
 lista3[0].nome = "Filipe"
 lista3[0].sobrenome = "Assis"
 lista3[0].cpf = "000.000.000-00"
-lista3[0].salario = "R$3.000,00"
+lista3[0].salario = "000.000.000-00"
 lista3[0].cargo = "Carteiro"
 
 lista3.append(Funcionario())
